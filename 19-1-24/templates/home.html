@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+<table>
+
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>place</th>
+            <th>email</th>
+            <th>phone_no</th>
+            <th>delete</th>
+            <th>update</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+        {%for data in range(student_details|length)%}
+        <tr>
+        <td>{{student_details[data|int].id}}</td>
+        <td>{{student_details[data|int].name}}</td>
+        <td>{{student_details[data|int].place}}</td>
+        <td>{{student_details[data|int].email}}</td>
+        <td>{{student_details[data|int].phone_no}}</td>
+        <td> <a href="/delete/{{data}}">delete</a></td>
+        <td> <a href="/update/{{data}}">update</a></td>
+        </tr>
+        {%endfor%} 
+    </tbody>
+</table> 
+<form action="/" method="GET">
+<input type="submit" value="Logout"/>
+</form>
+
+
+
+
+   
+</body>
+</html>
